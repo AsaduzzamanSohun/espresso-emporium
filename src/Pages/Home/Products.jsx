@@ -25,7 +25,7 @@ const Products = () => {
 
             <div className="max-w-[1448px] mx-auto h-[calc(1189px-140px)] overflow-scroll scrollable-content">
 
-                <div className="grid grid-cols-1 md:grid-cols-2 md:space-x-8 my-12 overflow-scroll md:overflow-auto">
+                <div className="grid grid-cols-1 xl:grid-cols-2 xl:space-x-8 my-12 overflow-scroll md:overflow-auto">
 
                     <div className="flex flex-col md:flex-row items-center justify-around my-4 mx-4 md:gap-8 md:p-8 bg-[#F5F4F1] bg-opacity-80 rounded-lg">
                         <div>

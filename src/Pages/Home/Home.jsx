@@ -1,6 +1,7 @@
 import Banner from "../../Components/Banner";
-import DownBanner from "./DownBanner";
+import DownBanner from "../../Components/DownBanner";
 import Products from "./Products";
+
 
 
 const Home = () => {
