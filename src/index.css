@@ -9,22 +9,52 @@
     font-family: "Raleway", sans-serif;
 }
 
-.button{
+.button {
     background-color: #E3B577;
     color: #242222;
     font-family: "Rancho", cursive;
-    padding: 8px  16px;
+    padding: 8px 24px;
     font-size: 1.5rem;
     border: 2px solid #E3B577;
     transition-duration: 500ms;
 }
 
-.button:hover{
+.button:hover {
     background-color: transparent;
     border: 2px solid white;
     color: white;
+}
+
+.dark {
+    color: #331A15;
     
 }
+
+.darker {
+    color: #1B1A1A;
+}
+
+
+.add-btn {
+    background-color: #E3B577;
+    color: white;
+    font-family: "Rancho", cursive;
+    padding: 8px 24px;
+    font-size: 1.5rem;
+    border-radius: 6px;
+    border: 2px solid #331A15;
+    transition-duration: 500ms;
+}
+
+.add-btn:hover {
+    background-color: #f5f4f1;
+    border: 2px solid #331A15;
+    color: white;
+}
+
+.scrollable-content::-webkit-scrollbar {
+    display: none;
+  }
 
 @tailwind base;
 @tailwind components;
