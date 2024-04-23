@@ -9,6 +9,23 @@
     font-family: "Raleway", sans-serif;
 }
 
+.button{
+    background-color: #E3B577;
+    color: #242222;
+    font-family: "Rancho", cursive;
+    padding: 8px  16px;
+    font-size: 1.5rem;
+    border: 2px solid #E3B577;
+    transition-duration: 500ms;
+}
+
+.button:hover{
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
