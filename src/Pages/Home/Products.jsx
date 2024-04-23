@@ -9,7 +9,7 @@ import { MdDelete, MdEdit } from "react-icons/md";
 
 const Products = () => {
     return (
-        <div className="font-raleway bg-[url('https://i.imgur.com/8p9bufu.png')] h-[1189px] my-28">
+        <div className="font-raleway bg-[url('https://i.imgur.com/8p9bufu.png')] h-[1189px] my-28 bg-cover bg-center min-w-screen">
 
 
             <div className="text-center space-y-4 mb-12">
