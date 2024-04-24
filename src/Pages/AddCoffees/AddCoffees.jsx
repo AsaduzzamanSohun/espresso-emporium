@@ -13,10 +13,23 @@ const AddCoffees = () => {
         const category = form.category.value;
         const details = form.details.value;
         const photo = form.photo.value;
+        const price = form.price.value;
 
-        const newCoffee = { name, quantity, supplier, taste, category, details, photo };
+        const newCoffee = { name, quantity, supplier, taste, category, details, photo, price};
         console.log(newCoffee);
         console.log(photo);
+
+        fetch('http://localhost:5000/coffees', {
+            method: 'POST',
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(newCoffee)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
 
     }
 
@@ -83,12 +96,16 @@ const AddCoffees = () => {
 
                             </div>
 
-                            <div className="font-raleway pt-4">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 font-raleway py-4">
 
                                 <div>
                                     <label className="text-xl font-medium dark">Photo</label>
                                     <input className="w-full px-4 py-3 font-raleway input-focus rounded-md mt-3" type="text" name="photo" placeholder="Enter coffee photo" />
+                                </div>
 
+                                <div>
+                                    <label className="text-xl font-medium dark">Price</label>
+                                    <input className="w-full px-4 py-3 font-raleway input-focus rounded-md mt-3" type="text" name="price" placeholder="Enter coffee price" />
                                 </div>
 
                             </div>
