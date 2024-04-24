@@ -2,6 +2,24 @@ import { BsArrowLeft } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const AddCoffees = () => {
+
+    const handleAddCoffee = e => {
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const quantity = form.quantity.value;
+        const supplier = form.supplier.value;
+        const taste = form.taste.value;
+        const category = form.category.value;
+        const details = form.details.value;
+        const photo = form.photo.value;
+
+        const newCoffee = { name, quantity, supplier, taste, category, details, photo };
+        console.log(newCoffee);
+        console.log(photo);
+
+    }
+
     return (
 
         <div className="bg-[url('https://i.imgur.com/CvCEuhS.png')]">
@@ -24,7 +42,7 @@ const AddCoffees = () => {
 
                     <div className="max-w-[1096px] mx-auto p-3">
 
-                        <form>
+                        <form onSubmit={handleAddCoffee}>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 font-raleway py-4">
 
@@ -65,11 +83,12 @@ const AddCoffees = () => {
 
                             </div>
 
-                            <div className="font-raleway py-4">
+                            <div className="font-raleway pt-4">
 
                                 <div>
                                     <label className="text-xl font-medium dark">Photo</label>
                                     <input className="w-full px-4 py-3 font-raleway input-focus rounded-md mt-3" type="text" name="photo" placeholder="Enter coffee photo" />
+
                                 </div>
 
                             </div>
@@ -77,7 +96,7 @@ const AddCoffees = () => {
                             <div className="font-raleway py-4">
 
                                 <div>
-                                    <input className="w-full add-btn rounded-md mt-3" type="submit" name="photo" placeholder="Enter coffee photo" />
+                                    <input className="w-full add-btn rounded-md mt-3" type="submit" placeholder="Enter coffee photo" />
                                 </div>
 
                             </div>

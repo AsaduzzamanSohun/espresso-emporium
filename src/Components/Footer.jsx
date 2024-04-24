@@ -2,6 +2,7 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaLocationArrow, FaPhone, FaTwitte
 import { MdMail } from "react-icons/md";
 
 const Footer = () => {
+
     return (
         <footer>
             <div className=" h-[776px] bg-[url('https://i.imgur.com/4MgIrCf.jpg')]">
@@ -48,9 +49,9 @@ const Footer = () => {
                     <nav className="mt-12 lg:mt-36">
                         <h2 className="md:text-[32px] lg:text-[45px] font-rancho dark drop-shadow-md mb-4 text-center md:text-start">Get in Touch</h2>
                         <form className="flex flex-col gap-4 lg:w-[400px] xl:w-[503px]" action="">
-                            <input className="w-full px-4 py-3 font-raleway" type="text" name="name" placeholder="Name" />
-                            <input className="w-full px-4 py-3 font-raleway" type="email" name="email" placeholder="Email" />
-                            <textarea className="w-full px-4 py-3 font-raleway resize-none" name="message" id="" cols="30" rows="4" placeholder="Message"></textarea>
+                            <input className="w-full px-4 py-3 font-raleway input-focus" type="text" name="name" placeholder="Name" />
+                            <input className="w-full px-4 py-3 font-raleway input-focus" type="email" name="email" placeholder="Email" />
+                            <textarea className="w-full px-4 py-3 font-raleway input-focus resize-none" name="message" id="" cols="30" rows="4" placeholder="Message"></textarea>
                             <input className="submit text-sm md:text-xl max-w-[150px] mx-auto md:mx-0" type="submit" value="Send Message" />
                         </form>
                     </nav>
