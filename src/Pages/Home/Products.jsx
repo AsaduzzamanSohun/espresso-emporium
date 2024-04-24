@@ -3,6 +3,7 @@ import { SlCup } from "react-icons/sl";
 import { Link, useLoaderData } from "react-router-dom";
 
 import CoffeeCard from "../AddCoffees/CoffeeCard";
+import { useState } from "react";
 
 
 
@@ -10,6 +11,7 @@ import CoffeeCard from "../AddCoffees/CoffeeCard";
 const Products = () => {
 
     const loadedCoffees = useLoaderData();
+    const [coffees, setCoffees] = useState(loadedCoffees)
 
 
     return (
@@ -36,9 +38,11 @@ const Products = () => {
 
                     {
 
-                        loadedCoffees.map(coffee => <CoffeeCard
+                        coffees.map(coffee => <CoffeeCard
                             key={coffee._id}
-                            coffee={coffee}></CoffeeCard>)
+                            coffee={coffee}
+                            coffees={coffees}
+                            setCoffees={setCoffees}></CoffeeCard>)
 
                     }
 

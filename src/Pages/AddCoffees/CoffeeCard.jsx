@@ -3,13 +3,25 @@ import { MdDelete, MdEdit } from "react-icons/md";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 
-const CoffeeCard = ({coffee}) => {
+const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
 
-    const {_id, name, quantity, photo, price} = coffee;
+    const { _id, name, quantity, photo, price } = coffee;
 
 
-    const hadleDelete = _id => {
-        console.log(coffee._id);
+    const handleDelete = _id => {
+
+        console.log(_id);
+        fetch(`http://localhost:5000/coffees/${_id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    const remaining = coffees.filter(cof => cof._id !== _id);
+                    setCoffees(remaining)
+                }
+            })
+
     }
 
 
@@ -27,8 +39,8 @@ const CoffeeCard = ({coffee}) => {
                 </div>
                 <div className="flex flex-col gap-3 text-white md:m-8 md:col-span-1">
                     <Link to='/' ><button className="p-2 rounded-md bg-[#D2B48C]"><FaEye    ></FaEye></button></Link>
-                    <Link to='/' ><button className="p-2 rounded-md bg-[#3C393B]"><MdEdit   ></MdEdit></button></Link>
-                    <Link onClick={() => hadleDelete(coffee._id)} to='/' ><button className="p-2 rounded-md bg-[#EA4744]"><MdDelete ></MdDelete></button> </Link>
+                    <Link to={`/edit-coffee/${_id}`} ><button className="p-2 rounded-md bg-[#3C393B]"><MdEdit   ></MdEdit></button></Link>
+                    <Link to='/'><button onClick={() => handleDelete(coffee._id)} className="p-2 rounded-md bg-[#EA4744]"><MdDelete ></MdDelete></button></Link>
                 </div>
 
             </div>
