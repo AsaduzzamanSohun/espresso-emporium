@@ -1,7 +1,7 @@
 
 const Gallery = () => {
     return (
-        <div className="max-w-[1440px] mx-auto my-24">
+        <div className="max-w-[1320px] mx-auto my-24">
             <div className="text-center space-y-4 mb-12">
                 <h4>Follow Us Now</h4>
                 <h2 className="font-rancho text-4xl dark">

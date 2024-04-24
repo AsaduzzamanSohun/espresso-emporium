@@ -2,7 +2,7 @@
 const DownBanner = () => {
     return (
         <div className="bg-[#ECEAE3]" >
-            <div className="max-w-[1440px] mx-auto md:px-4 lg:px-8 xl:px-0 py-12 flex flex-col md:flex-row items-center justify-between gap-4 font-raleway">
+            <div className="max-w-[1320px] mx-auto md:px-4 lg:px-8 xl:px-0 py-12 grid grid-cols-1 md:grid-cols-4 gap-8 font-raleway">
                 <div className="space-y-3 text-center md:text-start px-16 py-4 md:p-0">
                     <img className="mx-auto md:mx-0" src="https://i.imgur.com/Az24cXw.png" alt="" />
                     <h3 className="text-2xl lg:text-4xl font-rancho dark">Awesome Aroma</h3>

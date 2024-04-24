@@ -35,6 +35,11 @@
 }
 
 
+.input-focus:focus{
+    outline: 2px solid #E3B577;
+}
+
+
 .add-btn {
     background-color: #E3B577;
     color: white;
@@ -49,7 +54,7 @@
 .add-btn:hover {
     background-color: #f5f4f1;
     border: 2px solid #331A15;
-    color: white;
+    color: #E3B577;
 }
 
 .submit{
