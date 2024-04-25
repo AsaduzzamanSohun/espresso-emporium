@@ -1,7 +1,9 @@
 import { BsArrowLeft } from "react-icons/bs";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, ScrollRestoration, useLoaderData } from "react-router-dom";
 
 const Details = () => {
+
+    ScrollRestoration('/');
 
     const coffee = useLoaderData();
 
