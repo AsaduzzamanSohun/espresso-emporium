@@ -5,7 +5,6 @@ import Gallery from "../../Components/Gallery";
 import Products from "./Products";
 
 
-
 const Home = () => {
 
     ScrollRestoration('/');

@@ -62,7 +62,6 @@ const Footer = () => {
                 <p className="font-rancho text-white text-center">Copyright Espresso Emporium ! All Rights Reserved</p>
             </div>
 
-
         </footer>
     );
 };

@@ -13,10 +13,8 @@ const Products = () => {
     const loadedCoffees = useLoaderData();
     const [coffees, setCoffees] = useState(loadedCoffees)
 
-
     return (
         <div className="font-raleway bg-[url('https://i.imgur.com/8p9bufu.png')] h-[1189px] my-28 bg-cover bg-center min-w-screen">
-
 
             <div className="text-center mb-12">
                 <h4>--- Sip & Savor ---</h4>
@@ -29,7 +27,6 @@ const Products = () => {
                         <SlCup className="darker" />
                     </button>
                 </Link>
-
             </div>
 
             <div className="max-w-[1320px] mx-auto h-[calc(1189px-140px)] overflow-scroll scrollable-content">
@@ -42,7 +39,9 @@ const Products = () => {
                             key={coffee._id}
                             coffee={coffee}
                             coffees={coffees}
-                            setCoffees={setCoffees}></CoffeeCard>)
+                            setCoffees={setCoffees}>
+
+                        </CoffeeCard>)
 
                     }
 
