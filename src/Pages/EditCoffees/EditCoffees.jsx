@@ -28,7 +28,7 @@ const EditCoffees = () => {
         console.log(updateCoffee);
         console.log(photo);
 
-        fetch(`http://localhost:5000/coffees/${_id}`, {
+        fetch(`https://espresso-emporium-server-phi.vercel.app/coffees/${_id}`, {
             method: 'PUT',
             headers: {
                 "content-type": "application/json"
