@@ -1,8 +1,10 @@
 import { BsArrowLeft } from "react-icons/bs";
-import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import { Link, ScrollRestoration, useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const EditCoffees = () => {
+
+    ScrollRestoration('/');
 
     const coffees = useLoaderData();
     const {_id, name, quantity, supplier, taste, category, details, photo, price} = coffees;

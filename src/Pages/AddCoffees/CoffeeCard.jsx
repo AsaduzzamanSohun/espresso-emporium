@@ -2,6 +2,7 @@ import { FaEye } from "react-icons/fa";
 import { MdDelete, MdEdit } from "react-icons/md";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
+import Swal from "sweetalert2";
 
 const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
 
@@ -17,6 +18,25 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
             .then(res => res.json())
             .then(data => {
                 if (data.deletedCount > 0) {
+
+                    Swal.fire({
+                        title: "Are you sure?",
+                        text: "Are you sure that you want to delete this?",
+                        icon: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#3085d6",
+                        cancelButtonColor: "#d33",
+                        confirmButtonText: "Yes, delete it!"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Deleted coffee Details",
+                                icon: "success"
+                            });
+                        }
+                    });
+
                     const remaining = coffees.filter(cof => cof._id !== _id);
                     setCoffees(remaining)
                 }
@@ -38,7 +58,7 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
                     <p className="font-light"><span className="font-semibold">Price: </span>{price}</p>
                 </div>
                 <div className="flex flex-col gap-3 text-white md:m-8 md:col-span-1">
-                    <Link to='/' ><button className="p-2 rounded-md bg-[#D2B48C]"><FaEye    ></FaEye></button></Link>
+                    <Link to={`/details/${_id}`} ><button className="p-2 rounded-md bg-[#D2B48C]"><FaEye    ></FaEye></button></Link>
                     <Link to={`/edit-coffee/${_id}`} ><button className="p-2 rounded-md bg-[#3C393B]"><MdEdit   ></MdEdit></button></Link>
                     <Link to='/'><button onClick={() => handleDelete(coffee._id)} className="p-2 rounded-md bg-[#EA4744]"><MdDelete ></MdDelete></button></Link>
                 </div>
@@ -52,5 +72,7 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
 export default CoffeeCard;
 
 CoffeeCard.propTypes = {
-    coffee: PropTypes.object
+    coffee: PropTypes.object,
+    coffees: PropTypes.object,
+    setCoffees: PropTypes.any
 }
